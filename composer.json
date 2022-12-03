@@ -17,5 +17,8 @@
             "email": "matheus.monteiro7@outlook.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8081 -t public/"
+    }
 }

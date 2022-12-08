@@ -1,32 +1,41 @@
 <?php
 
+// Declarando o namespace e subnamespace
 namespace Itworks\core;
 
+// Criação da classe RouterCore responsável pelas rotas
 class RouterCore {
 
     private $uri;
-    private $method;
+    private $method;        // Propriedades da classe
     private $getArr = [];
 
+    // Construtor da classe RouterCore
     public function __construct(){
+        // Chamada da função initial()
         $this->initial();
+        // Chamada do arquivo de configurações 
         require_once('../app/config/router.php');
+        //Chamada da função execute()
         $this->execute();
 
     }  
 
-    private function initial(){
-        $this->method = $_SERVER['REQUEST_METHOD'];
+    
+    private function initial(){ // Declarando o método initial()
+
+        $this->method = $_SERVER['REQUEST_METHOD']; // atribuindo à propriedade 'method' o método de requisição enviado, GET ou POST 
         
-        $uri_initial = $_SERVER['REQUEST_URI'];
+        $uri_initial = $_SERVER['REQUEST_URI']; // atribuindo o 'URI' da requisição à variável $uri_initial
         
-        if (strpos($uri_initial, '?')) {
-            $uri_initial = mb_substr($uri_initial, 0, strpos($uri_initial, '?'));
+        if (strpos($uri_initial, '?')) { // strpos encontra a posição da primeira ocorrencia de uma string, nesse caso ele irá avaliar o conteúdo contido em $uri_initial, e irá procurar a primeira ocorrência de '?'
+
+            $uri_initial = mb_substr($uri_initial, 0, strpos($uri_initial, '?')); // a função mb_substr() obtém parte da string, nesse caso, ele irá obter do início do valor contido em $uri_initial até à ocorrência de '?' 
         }
 
-        $ex = explode('/', $uri_initial);
+        $ex = explode('/', $uri_initial); // explode() irá dividir a string de $uri_initial em outras strings dividas por '/' e retorna um array com os valores, exemplo: https://www.php.net/manual/pt_BR/function.explode.php => $ex = [manual, pt_BR, function.explode.php]; 
 
-        $uri = array_values(array_filter($ex));
+        $uri = array_values(array_filter($ex)); // o método array_values(), retorna todos os valores de um array e array_filter() filtrará todos os valores do array $ex.
         
         for ($i = 0; $i < UNSET_URI_COUNT; $i++) {
             unset($uri[$i]);

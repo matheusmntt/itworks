@@ -4,6 +4,7 @@
 
     use Itworks\core\Controller;
     use Itworks\src\model\ContaModel;
+    use Itworks\classes\Input;
 
     class ContaController extends Controller
     {
@@ -25,6 +26,35 @@
 
             parent::load('conta/main', ['listaExtrato' => $listaExtrato]);
         }
+
+        public function novo()
+        {
+            parent::load('conta/novo');
+        }
+
+        public function salvar()
+        {
+            $registro = $this->getInputPost();
+            
+            $result = $this->contaModel->insert($registro);
+
+            if ( $result <= 0 )
+            {
+                echo "<h2> ERRO </h2>";
+            }
+            else 
+            {
+                echo "<h2> SUCESSO </h2>";
+            }
+        }
+
+        public function getInputPost()
+            {
+                return(object)[
+                    'valor' => Input::post('txtValor', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+                    'movimentacao' => Input::post('selMovimentacao', FILTER_UNSAFE_RAW)
+                ];
+            }
 
         public function extrato()
         {

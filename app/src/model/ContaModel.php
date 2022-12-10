@@ -31,7 +31,7 @@ class ContaModel
         $sqlParams = [
             ':valor'        => $params->valor,
             ':movimentacao' => $params->movimentacao,
-            ':dataRegistro' => $params->dataRegistro
+            ':dataRegistro' => date('Y-m-d H:i:s')
         ];
 
         $handle = $this->pdo->executeNonQuery($sql, $sqlParams);
@@ -84,10 +84,9 @@ class ContaModel
     {
         //Operador Null Coalesce
         return (object)[
-            'id'            => $param['id']             ?? null,
             'valor'         => $param['valor']          ?? null,
             'movimentacao'  => $param['movimentacao']   ?? null,
-            'dataRegistro'  => $param['dataRegistro']   ?? null,
+            'dataRegistro'  => date('Y-m-d H:i:s'),
         ];
     }
 }   

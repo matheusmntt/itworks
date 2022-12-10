@@ -2,9 +2,10 @@
 
     namespace Itworks\src\controller;
 
+    use Itworks\core\Controller;
     use Itworks\src\model\ContaModel;
 
-    class ContaController
+    class ContaController extends Controller
     {
         private $contaModel;
 
@@ -22,7 +23,7 @@
         {
             $listaExtrato = $this->contaModel->getAll();
 
-            require('../app/src/view/conta/main.php');
+            parent::load('conta/main', ['listaExtrato' => $listaExtrato]);
         }
 
         public function extrato()

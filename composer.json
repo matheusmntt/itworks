@@ -3,7 +3,9 @@
     "description": "Mini Framework PHP",
     "type": "project",
     "require": {
-        "twig/twig": "3.x-dev"
+        "twig/twig": "3.x-dev",
+        "php": "^8.0"
+        
     },
     "license": "MIT",
     "autoload": {

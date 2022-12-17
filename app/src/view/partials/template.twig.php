@@ -14,7 +14,9 @@
 <body>
     {% include 'partials/header.twig.php' %}
     
-    {% block body %}{% endblock %}
+    <main>
+        {% block body %}{% endblock %}
+    </main>
     
     {% include 'partials/footer.twig.php' %}
 </body>

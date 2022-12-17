@@ -6,5 +6,7 @@
     $this->get('/envio-arquivo', 'CurriculoController@upload');
     $this->post('/arquivo-salvar', 'CurriculoController@salvarUpload');
     $this->get('/cadastro-concluido', 'CurriculoController@sucesso');
+    $this->get('/sobre-empresa', 'CurriculoController@sobre');
+    $this->get('/como-funciona', 'CurriculoController@comoFunciona');
 
     

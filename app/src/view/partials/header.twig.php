@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Como funciona?</a>
+                        <a class="nav-link" href="/como-funciona">Como funciona?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre a Empresa</a>
+                        <a class="nav-link" href="/sobre-empresa">Sobre a Empresa</a>
                     </li>
                 </ul>   
             </div>

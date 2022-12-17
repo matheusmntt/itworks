@@ -14,7 +14,7 @@
 <body>
     {% include 'partials/header.twig.php' %}
     
-    <main>
+    <main class="container-fluid">
         {% block body %}{% endblock %}
     </main>
     

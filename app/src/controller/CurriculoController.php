@@ -76,4 +76,12 @@
         public function sucesso(){
             parent::load('curriculo\sucesso');
         }
+
+        public function sobre(){
+            parent::load('curriculo\sobre');
+        }
+        
+        public function comoFunciona(){
+            parent::load('curriculo\comoFunciona');
+        }
     }

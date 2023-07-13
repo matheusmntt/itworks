@@ -1,0 +1,26 @@
+{
+    "name": "matheusmntt/itworks",
+    "description": "Mini Framework PHP",
+    "type": "project",
+    "require": {
+        "twig/twig": "3.x-dev",
+        "php": "^8.0"
+        
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Itworks\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matheus Monteiro",
+            "email": "matheus.monteiro7@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8081 -t public/"
+    }
+}
